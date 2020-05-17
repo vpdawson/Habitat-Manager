@@ -1,0 +1,24 @@
+process Sequence 
+
+If you use the graphical modeler 
+
+Generate basemap layer (HCMGIS) plugin 
+
+Create points from DBF
+Identify Cluster center Vector--> Analysis Tools--> Mean coordinates  (unique ID cluster)
+	The minimum cluster area size is 4.05 ha (10 ac),
+	The minimum number of cavity trees in a cluster is one.  
+	Cavity trees assigned to a cluster may be just a few feet apart or over a hundred feet apart.  
+	
+create 200ft buffer (tree)
+	The minimum buffer distance around the cluster is 200 feet, but may be wider where a 200-foot buffer encompasses less than 10 acres
+
+create vorronni polygons (tree) / 
+Clip Vorronni with 200m buffer
+	Concave (Nearest neighbor) - vorronni buffer
+	Convex - concave
+	statistics - Covert meters-sq to ac/ha/ft/mile
+		1 = 0.000247105 / 1 = 0.0001 / 1 = 3.28084 / 1 = 0.000621371
+		
+create 1/4M buffer (center) / Disolve
+create 1/2M buffer (center) / Disolve
